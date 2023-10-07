@@ -22,7 +22,7 @@
               .polygonSideColor(() => 'rgba(0, 100, 0, 0.05)')
               .polygonLabel(({ properties: d }) => `
                   <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
-                  Population: <i>${Math.round(+d.POP_EST)}</i>
+                  Hazard: <i>${Math.round(+d.POP_EST)}</i>
                 `);
         
             // Auto-rotate
@@ -34,7 +34,7 @@
         
               setTimeout(() => world
                 .polygonsTransitionDuration(4000)
-                .polygonAltitude(feat => Math.max(0.1, Math.sqrt(+feat.properties.POP_EST)))
+                .polygonAltitude(feat => Math.max(0.1, Math.sqrt(+feat.properties.POP_EST)/ 3))
               , 3000);
             });
           </script>
