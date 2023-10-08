@@ -23,14 +23,27 @@
               .polygonLabel(({ properties: d }) => `
                   <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
                   Vulnerability: <i>${Math.round(+d.POP_EST)}</i>
-                `);
-        
+                `)
+
             // Auto-rotate
             world.controls().autoRotate = true;
             world.controls().autoRotateSpeed = 1.8;
         
-            fetch('./final_excel_file.geojson').then(res => res.json()).then(countries => {
+            fetch('./final_excel_file.geojson')
+            .then(res => res.json())
+            .then(countries => {
               world.polygonsData(countries.features.filter(d => d.properties.ISO_A2 !== 'AQ'));
+              world.onPolygonClick(({properties: d}) => {
+                const nomeDoPais = d.ADMIN;
+                const populacao = d.POP_EST;
+                const economia = d.ECONOMY;
+
+                // Faça o que você deseja com essas informações aqui
+                console.log('Nome do país:', nomeDoPais);
+                console.log('População:', populacao);
+                console.log('Economia:', economia);
+              });
+        
         
               setTimeout(() => world
                 .polygonsTransitionDuration(4000)
