@@ -29,6 +29,10 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-image: url('background-image.jpg'); /* Substitua 'caminho-para-sua-imagem.jpg' pelo caminho da sua imagem de fundo */
+  background-size: cover; /* Ajusta o tamanho da imagem para cobrir todo o elemento body */
+  background-repeat: no-repeat; /* Evita a repetição da imagem */
+  background-attachment: fixed; /* Fixa a imagem de fundo para que ela não role com a página */
 }
 
 h1 {

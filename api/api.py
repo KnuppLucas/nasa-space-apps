@@ -2,8 +2,10 @@ from flask import Flask, jsonify, request
 from iaTraining import fazer_previsao
 from beautifulSoap import extract_elements_for_anchor
 from joblib import load
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # Defina a rota da API
 @app.route('/api/extract_data/<anchor>', methods=['GET'])
@@ -37,6 +39,9 @@ def consultar():
         'agencia_predita': agencia_predita[0],
         'topico_predito': topico_predito[0]
     }
+
+    
+    
     return jsonify(resposta)
 
 

@@ -1,0 +1,19 @@
+.input-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+    color: azure;
+}
+
+.search-input {
+    border: none; 
+    border-bottom: 8px solid rgb(131, 131, 131); 
+    background-color: transparent;
+    height: 50px;
+    color: azure; 
+  }
+  
+.search-button {
+/* Estilo do botão aqui */
+}

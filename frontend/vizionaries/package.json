@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "d3": "^7.8.5",
+    "d3-dsv": "^3.0.1",
+    "globe.gl": "^2.30.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
